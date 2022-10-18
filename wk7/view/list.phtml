@@ -1,0 +1,11 @@
+<?php
+$list_txt = '';
+foreach ($lists as $list) {
+    $info = explode(",",$list);
+    $list_txt .= "<tr><td><a href='?option=edit&id=". $info[0] . "'>". $info[0] . "</td>" .
+                 '<td>' . $info[1] . '</td></tr>' ;
+}
+
+if(!$list_txt) echo "There is no record";
+
+echo '<table border=1>' . $list_txt . '</table>';
